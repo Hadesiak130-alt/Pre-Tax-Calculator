@@ -1,10 +1,19 @@
 #include <iostream>
+#include <limits>
 
 double PreTaxPercent(double postTax, double taxRate) {
+    if (taxRate == 100) {
+        std::cout << "\nbro...\n";
+        return std::numeric_limits<int>::min();
+    }
     return postTax/(1-taxRate/100);
 }
 
 double PreTaxDecimal(double postTax, double taxRate) {
+    if (taxRate == 1) {
+        std::cout << "\nbro...\n";
+        return std::numeric_limits<int>::min();
+    }
     return postTax/(1-taxRate);
 }
 
